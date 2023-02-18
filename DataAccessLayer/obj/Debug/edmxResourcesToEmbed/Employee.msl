@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="APIRepositoryModelStoreContainer" CdmEntityContainer="APIRepositoryEntities">
+    <EntitySetMapping Name="emps">
+      <EntityTypeMapping TypeName="APIRepositoryModel.emp">
+        <MappingFragment StoreEntitySet="emp">
+          <ScalarProperty Name="empcode" ColumnName="empcode" />
+          <ScalarProperty Name="empname" ColumnName="empname" />
+          <ScalarProperty Name="deptcode" ColumnName="deptcode" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="joindate" ColumnName="joindate" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="desigcode" ColumnName="desigcode" />
+          <ScalarProperty Name="supcode" ColumnName="supcode" />
+          <ScalarProperty Name="gradecode" ColumnName="gradecode" />
+          <ScalarProperty Name="gradelevel" ColumnName="gradelevel" />
+          <ScalarProperty Name="basicpay" ColumnName="basicpay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

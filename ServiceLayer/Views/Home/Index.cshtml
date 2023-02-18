@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DataAccessLayer.Model.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Std_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Std_LastName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Std_FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Std_LastName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Std_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Std_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Std_id })
+            </td>
+        </tr>
+    }
+
+</table>

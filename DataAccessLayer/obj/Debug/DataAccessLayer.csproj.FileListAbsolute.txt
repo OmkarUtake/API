@@ -1,0 +1,15 @@
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.initial.resources
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.cache
+C:\Users\Nimap\New folder\DataAccessLayer\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.newemp.resources
