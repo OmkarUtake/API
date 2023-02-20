@@ -17,8 +17,8 @@ namespace ServiceLayer.Controllers
 
         public ActionResult Details(int id)
         {
-            Student std = null;
-            std = obj.GetById(id);
+
+            Student std = obj.GetById(id);
             return View(std);
         }
 
@@ -39,7 +39,36 @@ namespace ServiceLayer.Controllers
             return View();
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
 
 
+        [HttpPost]
+        public ActionResult Create(Student std)
+        {
+            if (obj.CreateStuddent(std))
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        public ActionResult Delete(int id)
+        {
+            Student std = obj.GetById(id);
+            return View(std);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id, Student std)
+        {
+            if (obj.DeleteStudent(id))
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }

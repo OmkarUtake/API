@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
@@ -68,6 +69,39 @@ namespace ServiceLayer.ApiConsuming
             {
                 return false;
             }
+        }
+
+
+        public bool CreateStuddent(Student std)
+        {
+            Client.BaseAddress = new Uri("https://localhost:44351/api/Student");
+            var response = Client.PostAsJsonAsync<Student>("Student", std);
+
+            response.Wait();
+
+            var test = response.Result;
+            if (test.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteStudent(int id)
+        {
+            Client.BaseAddress = new Uri("https://localhost:44351/api/Student");
+            var response = Client.DeleteAsync("Student?id=" + id.ToString()); ;
+            response.Wait();
+
+            var test = response.Result;
+            if (test.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -1,21 +1,27 @@
-﻿using DataAccessLayer.Model;
-using System;
+﻿using BuisnessLayer.APIRepo;
+using DataAccessLayer.Model;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+
+
 
 namespace ServiceLayer.Controllers
 {
     public class StudentController : ApiController
     {
+        private readonly IGetData _getdata;
+        public StudentController(IGetData getdata)
+        {
+            _getdata = getdata;
+        }
+
         DBClass db = new DBClass();
 
         [HttpGet]
         public IHttpActionResult GetStudents()
         {
-            List<Student> list = db.Students.ToList();
+            var list = _getdata.GetAllStudents();
             return Ok(list);
         }
 
@@ -41,5 +47,22 @@ namespace ServiceLayer.Controllers
             return Ok(student);
         }
 
+        [HttpPost]
+        public IHttpActionResult PostStudents(Student std)
+        {
+
+            db.Students.Add(std);
+            db.SaveChanges();
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IHttpActionResult DeleteStudentd(int id)
+        {
+            var std = db.Students.Where(x => x.Std_id == id).FirstOrDefault();
+            db.Students.Remove(std);
+            db.SaveChanges();
+            return Ok();
+        }
     }
 }
