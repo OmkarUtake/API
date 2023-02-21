@@ -1,10 +1,7 @@
 ﻿using DataAccessLayer.Model;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
 using System.Net.Http;
-using System.Web;
 
 namespace ServiceLayer.ApiConsuming
 {
@@ -41,7 +38,6 @@ namespace ServiceLayer.ApiConsuming
 
             response.Wait();
             var test = response.Result;
-
 
             if (test.IsSuccessStatusCode)
             {

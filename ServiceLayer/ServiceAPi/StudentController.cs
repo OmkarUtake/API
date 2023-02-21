@@ -1,4 +1,5 @@
 ﻿using BuisnessLayer.APIRepo;
+using ClassLibrary1.APIRepo;
 using DataAccessLayer.Model;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,18 +7,28 @@ using System.Web.Http;
 
 
 
-namespace ServiceLayer.Controllers
+namespace ServiceLayer.Controldlers
 {
     public class StudentController : ApiController
     {
+        //Fields
         private readonly IGetData _getdata;
-        public StudentController(IGetData getdata)
+        private readonly IGetById _getById;
+        private readonly IUpdateStudent _updateStudent;
+        private readonly IAddNew _addNew;
+        private readonly IDelete _delete;
+
+        //Constructor Used for Injection
+        public StudentController(IGetData getdata, IGetById getById, IUpdateStudent updateStudent, IAddNew addNew, IDelete delete)
         {
             _getdata = getdata;
+            _getById = getById;
+            _updateStudent = updateStudent;
+            _addNew = addNew;
+            _delete = delete;
         }
 
-        DBClass db = new DBClass();
-
+        //Controller
         [HttpGet]
         public IHttpActionResult GetStudents()
         {
@@ -28,40 +39,28 @@ namespace ServiceLayer.Controllers
         [HttpGet]
         public IHttpActionResult GetStudentById(int id)
         {
-            var student = db.Students.SingleOrDefault(x => x.Std_id == id);
+            var student = _getById.StudentByID(id);
             return Ok(student);
         }
 
         [HttpPut]
         public IHttpActionResult PutStudent(Student std)
         {
-            var student = db.Students.Where(x => x.Std_id == std.Std_id).FirstOrDefault();
-            if (student != null)
-            {
-                student.Std_id = std.Std_id;
-                student.Std_FirstName = std.Std_FirstName;
-                student.Std_LastName = std.Std_LastName;
-                db.SaveChanges();
-
-            }
+            var student = _updateStudent.Edit(std);
             return Ok(student);
         }
 
         [HttpPost]
         public IHttpActionResult PostStudents(Student std)
         {
-
-            db.Students.Add(std);
-            db.SaveChanges();
+            _addNew.AddStudentd(std);
             return Ok();
         }
 
         [HttpDelete]
         public IHttpActionResult DeleteStudentd(int id)
         {
-            var std = db.Students.Where(x => x.Std_id == id).FirstOrDefault();
-            db.Students.Remove(std);
-            db.SaveChanges();
+            _delete.DeleteStudent(id);
             return Ok();
         }
     }

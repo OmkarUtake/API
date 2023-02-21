@@ -51,8 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIRepo\AddNew.cs" />
+    <Compile Include="APIRepo\Delete.cs" />
+    <Compile Include="APIRepo\GetById.cs" />
     <Compile Include="APIRepo\GetData.cs" />
+    <Compile Include="APIRepo\IAddNew.cs" />
+    <Compile Include="APIRepo\IDelete.cs" />
+    <Compile Include="APIRepo\IGetById.cs" />
     <Compile Include="APIRepo\IGetData.cs" />
+    <Compile Include="APIRepo\IUpdateStudent.cs" />
+    <Compile Include="APIRepo\UpdateStudent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,8 +74,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MVCRepo\Classes\" />
-    <Folder Include="MVCRepo\Interface\" />
+    <Folder Include="MVCRepo\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
